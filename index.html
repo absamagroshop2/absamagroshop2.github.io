@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087443">
+<title>ABSAM AGRO SHOP</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f8f4;
+  color: #26352b;
+}
+
+header {
+  background: #087443;
+  color: white;
+  padding: 25px 15px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 14px;
+}
+
+nav {
+  background: #075b35;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  font-size: 13px;
+}
+
+.hero {
+  padding: 45px 20px;
+  text-align: center;
+  background: #e1f2e6;
+}
+
+.hero h2 {
+  color: #087443;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.btn {
+  display: inline-block;
+  background: #087443;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.btn:hover {
+  background: #075b35;
+}
+
+section {
+  padding: 30px 16px;
+}
+
+section h2 {
+  color: #087443;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.product {
+  background: white;
+  padding: 18px 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px #00000012;
+}
+
+.product .emoji {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.price {
+  color: #087443;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product a {
+  color: white;
+  background: #087443;
+  padding: 9px 12px;
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.services {
+  background: #eaf4ed;
+  text-align: center;
+  line-height: 2;
+}
+
+.payment {
+  text-align: center;
+  background: white;
+}
+
+.payment p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+footer {
+  background: #075b35;
+  color: white;
+  text-align: center;
+  padding: 22px 12px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media (max-width: 360px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌱 ABSAM AGRO SHOP</h1>
+  <p>Votre partenaire commercial au Bénin</p>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#produits">Produits</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="accueil">
+  <h2>Bienvenue chez ABSAM AGRO SHOP</h2>
+  <p>
+    Découvrez une nouvelle expérience de commerce
+    en ligne pour vos produits agricoles,
+    équipements électroniques et services.
+  </p>
+  <a class="btn" href="#produits">Découvrir nos produits</a>
+  <a class="btn" href="#contact">Nous contacter</a>
+</div>
+
+<section id="produits">
+  <h2>Nos produits</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <div class="emoji">🔋</div>
+      <h3>Power Bank</h3>
+      <p class="price">0.10π</p>
+      <a href="#contact">Commander</a>
+    </div>
+
+    <div class="product">
+      <div class="emoji">💡</div>
+      <h3>Lampe solaire</h3>
+      <p class="price">0.12π</p>
+      <a href="#contact">Commander</a>
+    </div>
+
+    <div class="product">
+      <div class="emoji">⌚</div>
+      <h3>Montre</h3>
+      <p class="price">0.08π</p>
+      <a href="#contact">Commander</a>
+    </div>
+
+    <div class="product">
+      <div class="emoji">🔌</div>
+      <h3>Accessoires USB</h3>
+      <p class="price">À partir de 0.03π</p>
+      <a href="#contact">Commander</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>Nos services</h2>
+  <p>🌾 Produits agricoles</p>
+  <p>📱 Équipements électroniques</p>
+  <p>🚗 Véhicules sur commande</p>
+  <p>📦 Commerce et livraison</p>
+  <p>🤝 Assistance commerciale</p>
+</section>
+
+<section class="payment">
+  <h2>Paiement Pi Network</h2>
+  <p>
+    ABSAM AGRO SHOP prépare l'intégration
+    du paiement en Pi Network.
+  </p>
+  <p>Environnement : Pi Testnet</p>
+  <p>Paiement électronique sécurisé en préparation.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact et commandes</h2>
+  <p style="text-align:center; margin-bottom:15px;">
+    Contactez-nous pour vos achats et demandes de services.
+  </p>
+
+  <div style="text-align:center;">
+    <a class="btn"
+       href="https://wa.me/22900000000"
+       target="_blank">
+       Commander sur WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 ABSAM AGRO SHOP</p>
+  <p>Commerce en ligne – Bénin</p>
+  <p>Merci de votre confiance !</p>
+</footer>
+
+</body>
+    </html>
