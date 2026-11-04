@@ -1,0 +1,12 @@
+{
+  "name": "absam-agro-shop-pi-server",
+  "version": "1.0.0",
+  "description": "Serveur de paiement Pi Network pour ABSAM AGRO SHOP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
