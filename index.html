@@ -277,6 +277,73 @@ Pi.init({
   version: "2.0",
   sandbox: true
 });
+    async function payerAvecPi(nomProduit, montant) {
+  try {
+    const scopes = ['username', 'payments'];
+
+    const auth = await Pi.authenticate(scopes, function (payment) {
+      console.log('Paiement en attente :', payment);
+    });
+
+    const paymentData = {
+      amount: montant,
+      memo: 'Achat : ' + nomProduit,
+      metadata: {
+        produit: nomProduit
+      }
+    };
+
+    await Pi.createPayment(paymentData, {
+      onReadyForServerApproval: async function (paymentId) {
+        const response = await fetch('https://absam-agro-shop-testnet.onrender.com/api/approve', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            paymentId: paymentId,
+            accessToken: auth.accessToken
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Échec de validation du paiement');
+        }
+      },
+
+      onReadyForServerCompletion: async function (paymentId, txid) {
+        const response = await fetch('https://absam-agro-shop-testnet.onrender.com/api/complete', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            paymentId: paymentId,
+            txid: txid,
+            accessToken: auth.accessToken
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Échec de confirmation du paiement');
+        }
+
+        alert('Paiement confirmé avec succès !');
+      },
+
+      onCancel: function (paymentId) {
+        alert('Paiement annulé.');
+      },
+
+      onError: function (error) {
+        alert('Erreur de paiement : ' + error.message);
+      }
+    });
+
+  } catch (error) {
+    alert('Erreur : ' + error.message);
+  }
+    }
   </script>
 </body>
     </html>
