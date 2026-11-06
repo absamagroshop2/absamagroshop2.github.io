@@ -278,7 +278,8 @@ Pi.init({
   sandbox: true
 });
     async function payerAvecPi(nomProduit, montant) {
-  try {
+ alert('Le bouton Payer avec Pi fonctionne !'); 
+      try {
     const scopes = ['username', 'payments'];
 
     const auth = await Pi.authenticate(scopes, function (payment) {
