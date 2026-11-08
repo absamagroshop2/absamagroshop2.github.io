@@ -60,7 +60,7 @@ app.post("/api/approve", async (req, res) => {
     await verifyUser(accessToken);
 
     const result = await piRequest(
-      `/v2/payments/${encodeURIComponent(paymentId)}/approve`,
+      `/payments/${encodeURIComponent(paymentId)}/approve`,
       {}
     );
 
@@ -83,7 +83,7 @@ app.post("/api/complete", async (req, res) => {
     await verifyUser(accessToken);
 
     const result = await piRequest(
-      `/v2/payments/${encodeURIComponent(paymentId)}/complete`,
+      `/payments/${encodeURIComponent(paymentId)}/complete`,
       { txid }
     );
 
