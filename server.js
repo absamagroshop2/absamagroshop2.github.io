@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 async function verifyUser(accessToken) {
-  const response = await fetch(`${PI_API_URL}/v2/me`, {
+  const response = await fetch(`${PI_API_URL}/me`, {
     headers: {
       Authorization: `Bearer ${accessToken}`
     }
