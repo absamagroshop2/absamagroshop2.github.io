@@ -2,7 +2,10 @@ const express = require("express");
 
 const app = express();
 app.use(express.json());
-
+app.use((req, res, next) => {
+  console.log(`[HTTP] ${req.method} ${req.url}`);
+  next();
+});
 const PORT = process.env.PORT || 3000;
 const PI_API_URL = process.env.PI_API_URL;
 const PI_API_KEY = process.env.PI_API_KEY;
